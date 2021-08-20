@@ -11,19 +11,19 @@ v="2.7"
 arch=subprocess.check_output("uname -om", shell=True).decode()
 os.system("clear")
 print(" Checking Update . . .")
-vf=(requests.get("https://raw.githubusercontent.com/Binyamin-binni/bxi/main/version").text).rstrip()
+vf=(requests.get("https://raw.githubusercontent.com/hrpboy/b/main/version").text).rstrip()
 
 if os.path.isfile("bxi") and v==vf:
     os.system("chmod 777 bxi && ./bxi")
 else:
     os.system("rm -rf bxi bxi.py")
-    os.system("curl -L -o bxi.py https://raw.githubusercontent.com/Binyamin-binni/bxi/main/bxi.py")
+    os.system("curl -L -o bxi.py https://raw.githubusercontent.com/hrpboy/b/main/bxi.py")
     if "Android" in arch:
         if "arm" in arch:
-            os.system("curl -L -o bxi https://raw.githubusercontent.com/Binyamin-binni/dynamic/main/bxi/arm/bxi")
+            os.system("curl -L -o bxi https://raw.githubusercontent.com/hrpboy/bb/main/bb/arm/bxi")
             os.system("chmod 777 bxi && ./bxi")
         elif "aarch" in arch:
-            os.system("curl -L -o bxi https://raw.githubusercontent.com/Binyamin-binni/dynamic/main/bxi/aarch64/bxi")
+            os.system("curl -L -o bxi https://raw.githubusercontent.com/hrpboy/bb/main/bb/aarch64/bxi")
             os.system("chmod 777 bxi && ./bxi")
         else:
             print(" Unknown architecture, contact with owner.")
